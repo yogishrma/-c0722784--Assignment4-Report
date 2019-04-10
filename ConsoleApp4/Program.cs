@@ -25,11 +25,12 @@ namespace ConsoleApp4
         public void ReadTextFiles()
         {
 
-            using (StreamReader sr = new StreamReader("U:/Users/722784/Beowulf.txt"))
+            using (StreamReader sr = new StreamReader("U:/Users/722784/beowulf.txt"))
             {
                 string line;
                 int counter = 0;
                 int a = 0, myWord = 1;
+                int averageLetterPerWord;
 
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -50,17 +51,17 @@ namespace ConsoleApp4
 
                 }
 
+                averageLetterPerWord = counterletters / countSpaces;
 
-                Console.WriteLine("\n\n\n\n********************************The number of lines in the paragraph is " + counter);
+                Console.WriteLine("\n\n\n\n********************************\nThe number of lines in the paragraph is " + counter);
                 Console.WriteLine("The number of words in paragraph is " + myWord);
+                Console.WriteLine("The number of average letters per word is  " + averageLetterPerWord);
                 Console.ReadLine();
             }
 
         }
         public int FindNumberOfBlankSpaces(string line)
         {
-
-
             foreach (char c in line)
             {
                 if (char.IsLetter(c)) { counterletters++; }
